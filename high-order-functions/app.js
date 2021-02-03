@@ -1,6 +1,6 @@
 /*
 You should make request on the following URL: 
-https://next.jsongenerator.com/api/json/get/VkBw8XP2d 
+https://next.json-generator.com/api/json/get/VkBw8XP2d 
 Get the JSON data and perform some operations on the data.
 You must use high order functions such as: filter, map, reduce, forEach, etc…
 */
