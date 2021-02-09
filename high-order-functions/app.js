@@ -15,7 +15,7 @@ fetch(`https://next.json-generator.com/api/json/get/VkBw8XP2d`)
         let filteredSalaries = employees
             .filter(e => e.country === 'Georgia' && e.company === 'Amazon')
             .map(e => e.salary);
-        const sum = filteredSalaries.reduce((next, accum) => next + accum, 0);
+        const sum = filteredSalaries.reduce((accum, next) => next + accum, 0);
         console.log("1: "+Math.round(sum/filteredSalaries.length));
 
         // 2. Find and print list of the employees which work in Facebook IT department.
@@ -43,12 +43,12 @@ fetch(`https://next.json-generator.com/api/json/get/VkBw8XP2d`)
         // 6. Find an average age of all employees and compare it to average age of Google employees. Print "1" if average age of all employees is smaller, otherwise print "2".
         const age1 = employees
             .map(e => 2021 - new Date(e.dob).getFullYear())
-            .reduce((next, accum) => next + accum, 0) / employees.length;
+            .reduce((accum, next) => next + accum, 0) / employees.length;
 
         const googleEmployees = employees.filter(e => e.company === 'Google');
         const age2 = googleEmployees
             .map(e => 2021 - new Date(e.dob).getFullYear())
-            .reduce((next, accum) => next + accum, 0) / googleEmployees.length;
+            .reduce((accum, next) => next + accum, 0) / googleEmployees.length;
 
         if (age1 < age2) {
             console.log("6: 1");
@@ -74,7 +74,7 @@ fetch(`https://next.json-generator.com/api/json/get/VkBw8XP2d`)
         const result9 = employees
             .filter(e => e.company === 'Apple' && e.country === 'USA')
             .map(e => e.salary)
-            .reduce((next, accum) => next + accum)
+            .reduce((accum, next) => next + accum)
 
         console.log("9: ", result9);
 
